@@ -1,23 +1,15 @@
-# Use Node.js as base image
 FROM node:18-alpine
 
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the project files
+RUN mkdir -p /usr/src/nuxt-app
+WORKDIR /usr/src/nuxt-app
 COPY . .
 
-# Build the Nuxt project
+RUN npm ci && npm cache clean --force
 RUN npm run build
 
-# Expose the Nuxt application port
-EXPOSE 3000
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=3000
 
-# Start the Nuxt application
-CMD ["node", "output/server/index.mjs"]
+EXPOSE 3000 
+
+ENTRYPOINT ["node", ".output/server/index.mjs"]
