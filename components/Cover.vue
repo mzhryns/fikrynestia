@@ -7,7 +7,7 @@
         The Wedding of
       </div>
       <div
-        class="text-5xl font-bold font-['Dancing_Script'] text-[#29A07B] pb-3"
+        class="text-5xl font-bold font-['Dancing_Script'] text-[#5b6759] pb-3"
       >
         {{ props.title }}
       </div>

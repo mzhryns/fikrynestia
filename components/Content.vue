@@ -35,7 +35,7 @@ const props = defineProps({
   brideDescription: { type: String, required: true },
 });
 
-const title = ref<string>('Assalamu\'alaikum Warahmatullahi Wabarakatuh');
+const title = ref<string>('اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ');
 const text1 = ref<string>('Maha Suci Allah SWT yang telah menciptakan makhluk-Nya berpasang-pasangan. Dengan mengharap Ridho serta Rahmat Allah Subhanahu Wa Ta\'ala, kami bermaksud menyelenggarakan pernikahan putra-putri kami:');
 const text2 = ref<string>('Merupakan kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do\'a restu kepada kedua mempelai.');
 </script>
