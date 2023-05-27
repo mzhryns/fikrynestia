@@ -125,7 +125,6 @@ const reception: SingleEvent = {
   name: 'RESEPSI',
   descriptions: [
     'Minggu, 25 Juni 2023',
-    'Pukul 12.00-14.00 WIB',
     'Auditorium Yadika Bangil',
     'Jl. Salem No.3 Kersikan Bangil',
   ],
@@ -141,6 +140,16 @@ const data: Data = reactive({
   bride,
   events,
 });
+
+const setupFirstSection = () => {
+  mainDate.value = new Date('2023-06-25 10:00:00');
+  events.events[1].descriptions.splice(1, 0, 'Pukul 10.00-12.00 WIB');
+};
+
+const setupSecondSession = () => {
+  mainDate.value = new Date('2023-06-25 12:00:00');
+  events.events[1].descriptions.splice(1, 0, 'Pukul 12.00-14.00 WIB');
+};
 
 const { audioRef, playSound, pauseSound } = useSound();
 
@@ -179,13 +188,13 @@ onMounted(() => {
     sessionSelected.value = (parsedInt > 1 || isNaN(parsedInt)) ? 0 : parsedInt;
 
     if (parsedInt === 0 || parsedInt > 1) {
-      mainDate.value = new Date('2023-06-25 10:00:00');
+      setupFirstSection();
     } else {
-      mainDate.value = new Date('2023-06-25 12:00:00');
+      setupSecondSession();
     }
   } else {
     sessionSelected.value = 0;
-    mainDate.value = new Date('2023-06-25 10:00:00');
+    setupFirstSection();
   }
 
   isPageLoaded.value = true;
