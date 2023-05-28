@@ -2,7 +2,7 @@
   <section class="flex justify-center px-5 bg-white py-20">
     <div class="container md:w-[600px] text-center">
       <span class="font-bold text-xl text-gray-600 tracking-wide uppercase">{{ title }}</span>
-      <p class="text-gray-500 mt-4 pt-5">
+      <p class="text-gray-500 mt-4 pt-5 md:w-5/6 mx-auto my-auto">
         {{ text1 }}
       </p>
       <div class="mt-10">
@@ -20,7 +20,7 @@
         </div>
         <span class="text-sm text-gray-500 font-visiapro-light">{{ props.brideDescription }}</span>
       </div>
-      <p class="text-gray-500 mt-10">
+      <p class="text-gray-500 mt-10 md:w-5/6 mx-auto my-auto">
         {{ text2 }}
       </p>
     </div>

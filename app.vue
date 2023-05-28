@@ -122,7 +122,7 @@ const bride: Person = {
 };
 
 const akad: SingleEvent = {
-  name: 'AKAD',
+  name: 'AKAD NIKAH',
   descriptions: [
     'Jum\'at, 23 Juni 2023',
     'Kediaman Mempelai Wanita',
