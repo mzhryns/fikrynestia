@@ -28,6 +28,7 @@
   </Transition>
 
   <Header
+    v-if="isCoverOpened"
     :title="data.title"
   />
 
@@ -47,6 +48,15 @@
   />
 
   <Quote v-if="isCoverOpened" />
+
+  <Gift
+    v-if="isOnlineGift"
+  />
+
+  <Footer
+    v-if="isCoverOpened"
+    :title="data.title"
+  />
 
   <div
     v-if="isCoverOpened"
@@ -72,7 +82,7 @@
     class="fixed bottom-0 right-0 p-4 text-center z-[1000] cursor-pointer"
     @click="toggleSound"
   >
-    <div class="bg-[#1B9C85] hover:bg-[#87CBB9] rounded-full p-2 shadow cursor-pointer">
+    <div class="bg-[#5b6759] hover:bg-[#a0a89f] rounded-full p-2 shadow cursor-pointer">
       <svg
         v-if="!isPlayingRef"
         xmlns="http://www.w3.org/2000/svg"
@@ -112,19 +122,17 @@ const bride: Person = {
 };
 
 const akad: SingleEvent = {
-  name: 'AKAD',
+  name: 'AKAD NIKAH',
   descriptions: [
     'Jum\'at, 23 Juni 2023',
-    'Pukul 07.00 WIB',
     'Kediaman Mempelai Wanita',
-    'Keboncandi Permai Pasuruan',
   ],
 };
 
 const reception: SingleEvent = {
   name: 'RESEPSI',
   descriptions: [
-    'Minggu, 25 Juni 2023',
+    'Ahad, 25 Juni 2023',
     'Auditorium Yadika Bangil',
     'Jl. Salem No.3 Kersikan Bangil',
   ],
@@ -158,6 +166,7 @@ const isCoverOpened = ref<boolean>(false);
 const sessionSelected = ref<number>(0);
 const mainDate = ref<Date>(new Date());
 const isPlayingRef = ref<boolean>(false);
+const isOnlineGift = ref<number>(0);
 
 const route = useRoute();
 
@@ -195,6 +204,13 @@ onMounted(() => {
   } else {
     sessionSelected.value = 0;
     setupFirstSection();
+  }
+
+  if (route.query.g) {
+    const parsedInt = parseInt(route.query.g.toString(), 10);
+    isOnlineGift.value = (parsedInt > 1 || isNaN(parsedInt)) ? 0 : parsedInt;
+  } else {
+    isOnlineGift.value = 0;
   }
 
   isPageLoaded.value = true;

@@ -1,28 +1,29 @@
 <template>
   <section class="flex bg-[url('@/assets/images/bg-cover.jpg')] bg-cover justify-center px-5 py-20">
     <div class="flex flex-col w-full md:w-[768px]">
-      <span class="font-medium text-lg text-center text-gray-600 tracking-wide uppercase">SAVE THE DATE</span>
+      <span class="font-medium font-creattion text-5xl text-center text-gray-600 tracking-wide">Save The Date</span>
+      <span class="font-medium font-visiapro-light text-xl text-center text-gray-600 tracking-[.25em]">Ahad, 25 Juni 2023</span>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-center">
         <div class="bg-white rounded-lg p-5 shadow-md">
-          <div class="text-5xl text-[#29A07B] text-bold">
+          <div class="text-5xl text-[#5b6759] text-bold">
             {{ formattedDays }}
           </div>
           <span class="text-xs text-gray-500 tracking-wider">days</span>
         </div>
         <div class="bg-white rounded-lg p-5 shadow-md">
-          <div class="text-5xl text-[#29A07B] text-bold">
+          <div class="text-5xl text-[#5b6759] text-bold">
             {{ formattedHours }}
           </div>
           <span class="text-xs text-gray-500 tracking-wider">hours</span>
         </div>
         <div class="bg-white rounded-lg p-5 shadow-md">
-          <div class="text-5xl text-[#29A07B] text-bold">
+          <div class="text-5xl text-[#5b6759] text-bold">
             {{ formattedMinutes }}
           </div>
           <span class="text-xs text-gray-500 tracking-wider">minutes</span>
         </div>
         <div class="bg-white rounded-lg p-5 shadow-md">
-          <div class="text-5xl text-[#29A07B] text-bold">
+          <div class="text-5xl text-[#5b6759] text-bold">
             {{ formattedSeconds }}
           </div>
           <span class="text-xs text-gray-500 tracking-wider">seconds</span>
@@ -34,32 +35,55 @@
           :key="key"
           class="bg-white rounded-lg p-4 shadow-md"
         >
-          <span class="text-[#29A07B] tracking-wider font-semibold text-sm">{{ event.name }}</span>
+          <p class="text-center text-[#5b6759] tracking-[.3em] font-visiapro-light font-bold text-xl">
+            {{ event.name }}
+          </p>
+          <hr
+            class="my-2 h-0.5 border-t-0 bg-[#5b6759] opacity-100 dark:opacity-50"
+          >
           <div
             v-for="(description, index) in event.descriptions"
             :key="index"
-            class="text-gray-500 text-sm"
-            :class="{'pt-2': index === 0}"
+            class="text-gray-500"
           >
-            {{ description }}
+            <div class="flex items-center text-center">
+              <div class="h-6 w-6 mr-2 text-[#5b6759]">
+                <CalendarIcon
+                  v-if="index === 0"
+                />
+                <ClockIcon
+                  v-if="(index === 1 && event.descriptions.length === 4)"
+                />
+                <HomeIcon
+                  v-if="(index === 1 && event.descriptions.length === 2) ||(index === 2 && event.descriptions.length === 4)"
+                />
+              </div>
+              <span class="whitespace-nowrap">{{ description }}</span>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         <NuxtLink
-          class="bg-[#1B9C85] rounded-full px-4 py-2 text-white hover:bg-[#87CBB9] font-medium tracking-widest cursor-pointer text-center"
+          class="flex justify-center items-center bg-[#5b6759] rounded-full px-4 py-2 text-white hover:bg-[#a0a89f] font-medium tracking-widest cursor-pointer text-center"
           to="https://goo.gl/maps/DvcZgt8PWUCg44T57"
           target="_blank"
         >
-          Direction to Venue
+          <div class="flex items-center text-center">
+            <MapIcon class="h-6 w-6 mr-2" />
+            <span class="whitespace-nowrap">Open Maps</span>
+          </div>
         </NuxtLink>
         <NuxtLink
-          class="bg-[#1B9C85] rounded-full px-4 py-2 text-white hover:bg-[#87CBB9] font-medium tracking-widest cursor-pointer text-center"
+          class="flex justify-center items-center bg-[#5b6759] rounded-full px-4 py-2 text-white hover:bg-[#a0a89f] font-medium tracking-widest cursor-pointer text-center"
           :to="getSessionLink(props.session)"
           target="_blank"
         >
-          Add to Calendar
+          <div class="flex items-center text-center">
+            <CalendarDaysIcon class="h-6 w-6 mr-2" />
+            <span class="whitespace-nowrap">Add to Calendar</span>
+          </div>
         </NuxtLink>
       </div>
     </div>
@@ -67,6 +91,7 @@
 </template>
 
 <script setup lang="ts">
+import { CalendarIcon, ClockIcon, HomeIcon, MapIcon, CalendarDaysIcon } from '@heroicons/vue/24/solid';
 const props = defineProps({
   events: { type: Object as () => Events, required: true },
   mainDate: { type: Date, default: new Date() },
