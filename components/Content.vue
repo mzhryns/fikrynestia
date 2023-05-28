@@ -7,18 +7,18 @@
       </p>
       <div class="mt-10">
         <div class="text-4xl md:text-4xl font-['Dancing_Script'] text-[#5b6759]">
-          {{ props.groom }}
+          {{ props.bride }}
         </div>
-        <span class="text-sm text-gray-500 font-visiapro-light">{{ props.groomDescription }}</span>
+        <span class="text-sm text-gray-500 font-visiapro-light">{{ props.brideDescription }}</span>
       </div>
       <div class="text-xl mt-4 text-gray-500 tracking-wider font-semibold">
         &
       </div>
       <div class="mt-4">
         <div class="text-4xl md:text-4xl font-['Dancing_Script'] text-[#5b6759]">
-          {{ props.bride }}
+          {{ props.groom }}
         </div>
-        <span class="text-sm text-gray-500 font-visiapro-light">{{ props.brideDescription }}</span>
+        <span class="text-sm text-gray-500 font-visiapro-light">{{ props.groomDescription }}</span>
       </div>
       <p class="text-gray-500 mt-10 md:w-5/6 mx-auto my-auto">
         {{ text2 }}

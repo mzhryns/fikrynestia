@@ -132,9 +132,11 @@ const akad: SingleEvent = {
 const reception: SingleEvent = {
   name: 'RESEPSI',
   descriptions: [
-    'Ahad, 25 Juni 2023',
-    'Auditorium Yadika Bangil',
-    'Jl. Salem No.3 Kersikan Bangil',
+    'Sabtu, 24 Juni 2023',
+    'Gedung Pusat Penelitian Perkebunan',
+    'Gula Indonesia (P3GI)',
+    'Jl. Pahlawan No. 25, Pekuncen,',
+    'Kec. Panggungrejo, Kota Pasuruan',
   ],
 };
 
@@ -143,19 +145,19 @@ const events: Events = {
 };
 
 const data: Data = reactive({
-  title: 'Fikry & Nestia',
+  title: 'Nestia & Fikry',
   groom,
   bride,
   events,
 });
 
 const setupFirstSection = () => {
-  mainDate.value = new Date('2023-06-25 10:00:00');
-  events.events[1].descriptions.splice(1, 0, 'Pukul 10.00-12.00 WIB');
+  mainDate.value = new Date('2023-06-24 10:00:00');
+  events.events[1].descriptions.splice(1, 0, 'Pukul 10.00-13.00 WIB');
 };
 
 const setupSecondSession = () => {
-  mainDate.value = new Date('2023-06-25 12:00:00');
+  mainDate.value = new Date('2023-06-24 12:00:00');
   events.events[1].descriptions.splice(1, 0, 'Pukul 12.00-14.00 WIB');
 };
 

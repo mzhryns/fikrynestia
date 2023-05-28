@@ -2,7 +2,7 @@
   <section class="flex bg-[url('@/assets/images/bg-cover.jpg')] bg-cover justify-center px-5 py-20">
     <div class="flex flex-col w-full md:w-[768px]">
       <span class="font-medium font-creattion text-5xl text-center text-gray-600 tracking-wide">Save The Date</span>
-      <span class="font-medium font-visiapro-light text-xl text-center text-gray-600 tracking-[.25em]">Ahad, 25 Juni 2023</span>
+      <span class="font-medium font-visiapro-light text-xl text-center text-gray-600 tracking-[.25em]">Sabtu, 24 Juni 2023</span>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-center">
         <div class="bg-white rounded-lg p-5 shadow-md">
           <div class="text-5xl text-[#5b6759] text-bold">
@@ -39,7 +39,7 @@
             {{ event.name }}
           </p>
           <hr
-            class="my-2 h-0.5 border-t-0 bg-[#5b6759] opacity-100 dark:opacity-50"
+            class="my-2 h-0.5 border-t-0 bg-gray-700 opacity-100 dark:opacity-50"
           >
           <div
             v-for="(description, index) in event.descriptions"
@@ -52,10 +52,10 @@
                   v-if="index === 0"
                 />
                 <ClockIcon
-                  v-if="(index === 1 && event.descriptions.length === 4)"
+                  v-if="(index === 1 && event.descriptions.length === 6)"
                 />
                 <HomeIcon
-                  v-if="(index === 1 && event.descriptions.length === 2) ||(index === 2 && event.descriptions.length === 4)"
+                  v-if="(index === 1 && event.descriptions.length === 2) ||(index === 2 && event.descriptions.length === 6)"
                 />
               </div>
               <span class="whitespace-nowrap">{{ description }}</span>
@@ -67,7 +67,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         <NuxtLink
           class="flex justify-center items-center bg-[#5b6759] rounded-full px-4 py-2 text-white hover:bg-[#a0a89f] font-medium tracking-widest cursor-pointer text-center"
-          to="https://goo.gl/maps/DvcZgt8PWUCg44T57"
+          to="https://goo.gl/maps/2UHcsQ1d4jBaaayP8"
           target="_blank"
         >
           <div class="flex items-center text-center">
@@ -138,8 +138,8 @@ const remainingTime: ComputedRef<{
 });
 
 function getSessionLink (session: number): string {
-  if (session === 1) { return 'https://calndr.link/event/CHQwdCGmvf'; }
-  return 'https://calndr.link/event/THFLC1VGDL';
+  if (session === 1) { return 'https://calndr.link/event/Ezeq5jHhlP'; }
+  return 'https://calndr.link/event/jJdIXss7nX';
 }
 
 onMounted(() => {
