@@ -3,7 +3,7 @@
     <div class="flex flex-col w-full md:w-[600px]">
       <span class="font-medium font-creattion text-5xl text-center text-gray-600 tracking-wide">Wedding Gift</span>
       <div class="font-medium font-visiapro-light text- text-center text-gray-600 md:w-5/6 pt-2 pb-6 mx-auto my-auto">
-        Atas restu dan kedatangan anda ke pesta pernikahan anda sudah cukup bagi kami. Tapi jika kamu ingin memberi hadiah, kami menyediakan Amplop Digital untuk memudahkan anda. Terima kasih
+        Atas restu dan kedatangan anda ke pesta pernikahan kami sudah cukup bagi kami. Tapi jika anda ingin memberi hadiah, kami menyediakan Amplop Digital untuk memudahkan anda. Terima kasih
       </div>
       <div class="bg-white rounded-lg font-visiapro-light text-gray-700 p-4 shadow-md md:w-5/6 mx-auto my-auto">
         <img
