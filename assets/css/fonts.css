@@ -10,7 +10,7 @@
 @font-face {
     font-family: 'Creattion';
     src: url('@/assets/fonts/Creattion.woff') format('woff'),
-       url('@/assets/fonts/Creattion.ttf') format('opentype');
+       url('@/assets/fonts/Creattion.otf') format('opentype');
     /* Add additional font formats if necessary */
     font-weight: normal;
     font-style: normal;
