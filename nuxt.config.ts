@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/global.css',
     'animate.css/animate.min.css',
+    '@/assets/css/fonts.css',
   ],
 
   plugins: [
@@ -19,6 +20,7 @@ export default defineNuxtConfig({
     families: {
       'Dancing+Script': [700],
       Lato: [400, 500, 600, 700],
+      Allura: [400],
     },
   },
 

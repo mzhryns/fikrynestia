@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'BrittanySignature';
+    src: url('@/assets/fonts/BrittanySignature.woff') format('woff'),
+       url('@/assets/fonts/BrittanySignature.ttf') format('truetype');
+    /* Add additional font formats if necessary */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Creattion';
+    src: url('@/assets/fonts/Creattion.woff') format('woff'),
+       url('@/assets/fonts/Creattion.ttf') format('opentype');
+    /* Add additional font formats if necessary */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'VisiaProLight';
+    src: url('@/assets/fonts/VisiaPro-Light.woff') format('woff'),
+      url('@/assets/fonts/VisiaPro-Light.woff') format('woff2'),
+      url('@/assets/fonts/VisiaPro-Light.ttf') format('truetype');
+    /* Add additional font formats if necessary */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.font-brittanysignature {
+    font-family: 'BrittanySignature';
+}
+
+.font-creattion {
+    font-family: 'Creattion';
+}
+
+.font-visiapro-light {
+  font-family: 'VisiaProLight';
+}
