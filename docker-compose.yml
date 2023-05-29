@@ -3,4 +3,4 @@ services:
   fikrynestia:
     image: fikrynestia:latest
     ports:
-      - 3000:3001
+      - 3001:3000
