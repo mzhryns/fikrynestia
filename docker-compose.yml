@@ -1,6 +1,6 @@
 version: '3'
 services:
   fikrynestia:
-    image: fikrynestia:latest
+    image: nestiafikry:latest
     ports:
       - 3001:3000
