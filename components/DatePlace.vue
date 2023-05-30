@@ -138,8 +138,8 @@ const remainingTime: ComputedRef<{
 });
 
 function getSessionLink (session: number): string {
-  if (session === 1) { return 'https://calndr.link/event/Ezeq5jHhlP'; }
-  return 'https://calndr.link/event/jJdIXss7nX';
+  if (session === 1) { return 'https://calndr.link/event/jJdIXss7nX'; }
+  return 'https://calndr.link/event/Ezeq5jHhlP';
 }
 
 onMounted(() => {
